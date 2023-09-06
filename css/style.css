@@ -32,18 +32,18 @@ h1.header{
 #WaitLst-left{
   position: fixed;
   margin-top: 2%;
-  left: 2%;
+  left: 1%;
   width: 15%;
   height: auto;
   border:1px dashed #f3cece;
   text-align: center;
   padding-bottom: 20px;
 }
-
+/* 侧边栏右 */
 #WaitLst-right{
   position: fixed;
   margin-top: 2%;
-  right: 2%;
+  right: 1%;
   width: 15%;
   height: auto;
   border:1px dashed #f3cece;
@@ -65,8 +65,8 @@ a.fenlei{
     color: #000;
     text-decoration: none;
 }
-/* 侧边栏右 */
-.right{
+
+/* .right{
     margin-top: 2%;
     border:1px dashed #f3cece;
     float: right;
@@ -75,14 +75,15 @@ a.fenlei{
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 /* 设置搜索框 */
 .search {
-    width: 100%;
+    width: 80%;
     position: relative;
     display: flex;
-    margin-top: 10%;
-    margin-bottom: 10%;
+    margin-top: 8%;
+    margin-bottom: 3%;
+    margin-left: 10%;
   }
    
   .searchTerm {
@@ -116,8 +117,8 @@ a.fenlei{
     width: auto;
     height: auto;
     margin-top: 2%;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 18%;
+    margin-right: 18%;
    }
 
    h4,header{
