@@ -5,7 +5,6 @@ html{
 
 div.header{
     background: url("../images/background.jpg") no-repeat;
-    height:100%;
     width:100%;
     overflow: hidden;
     background-size:cover;
@@ -30,7 +29,7 @@ h1.header{
 } */
 
 #WaitLst-left{
-  position: fixed;
+  position: absolute;
   margin-top: 2%;
   left: 1%;
   width: 15%;
@@ -41,14 +40,15 @@ h1.header{
 }
 /* 侧边栏右 */
 #WaitLst-right{
-  position: fixed;
+  position: absolute;
   margin-top: 2%;
   right: 1%;
   width: 15%;
-  height: auto;
+  height: 50%;
   border:1px dashed #f3cece;
   text-align: center;
   padding-bottom: 20px;
+  overflow-y: scroll;
 }
 
 ul.fenlei{
@@ -76,7 +76,7 @@ a.fenlei{
     justify-content: center;
     align-items: center;
 } */
-/* 设置搜索框 */
+/* 设置搜索框
 .search {
     width: 80%;
     position: relative;
@@ -84,7 +84,7 @@ a.fenlei{
     margin-top: 8%;
     margin-bottom: 3%;
     margin-left: 10%;
-  }
+  } */
    
   .searchTerm {
     width: 100%;
