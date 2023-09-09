@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width"> 
-    <title>首页</title>
+    <title>前端入门基础</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="shortcut icon" href="images/dragon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/dragon.ico" type="image/x-icon">
 </head>
 <body>
     <!-- 页眉 -->
@@ -19,7 +19,8 @@
             <ul class="fenlei">
                 <li class="fenlei"><a href="../index.html" class="fenlei">首页</a></li>
                 <li class="fenlei"><a href="../html/html.html" class="fenlei">前端入门基础</a></li>
-                <li class="fenlei"><a href="../xiaochengxu/xiaochenxu.html" class="fenlei">小程序案例</a></li>
+                <li class="fenlei"><a href="../xiaochengxu/index.html" class="fenlei">小程序案例</a></li>
+                <li class="fenlei"><a href="../vue/vue.html" class="fenlei">VUE框架</a></li>
             </ul>
         </nav>
     </div>
@@ -27,11 +28,36 @@
     <!-- 侧边栏右 -->
     <div class="right" id="WaitLst-right">
         <nav>
-            <div class="search">
+            <!-- <div class="search">
                 <input type="text" class="searchTerm" placeholder="你想找什么?">
                 <button type="submit" class="searchButton">
                   <i class="fa fa-search"><img src="images/搜索.png" alt="搜索"></i>
                 </button>
+            </div> -->
+            <div class="mulu">
+                <h3>目录</h3>
+                <h2>前端入门基础</h2>
+                <ul>
+                    <li onclick="window.open('wyh/index.html')">我的第一个页面</li>
+                    <li onclick="window.open('head/index.html')">头部（属性、元素）</li>
+                    <li onclick="window.open('htmlText/index.html')">html文本处理基础</li>
+                    <li onclick="window.open('hyperlinks/index.html')">超链接的应用</li>
+                    <li onclick="window.open('advancedtextformat/index.html')">文本格式进阶</li>
+                    <li onclick="window.open('architecture/index.html')">网站架构</li>
+                    <li onclick="window.open('markletter/index.html')">标记信件</li>
+                    <li onclick="window.open('multi-media/index.html')">多媒体与嵌入</li>
+                    <li onclick="window.open('video/index.html')">音频与视频</li>
+                </ul>
+                <h2>小程序案例</h2>
+                <ul>
+                    <li onclick="window.open('../xiaochengxu/xiaochenxu-1.html')">本地生活-1</li>
+                    <li onclick="window.open('../xiaochengxu/xiaochenxu-2.html')">本地生活-2</li>
+                    <li onclick="window.open('../xiaochengxu/xiaochenxu-3.html')">本地生活-3</li>
+                </ul>
+                <h2>VUE框架</h2>
+                <ul>
+
+                </ul>
             </div>
         </nav>
     </div>
@@ -42,7 +68,7 @@
             <header style="font-size: 50px;">我的第一个页面</header>
             <div class="wyh">
                 <p>这是我的第一个页面，本着搞怪的想法，结合网上的教学文档，做成的一个css+html的网页,主要是用来练手（玩一下就好了，没什么好介绍的）</p>
-                <button class="yuedu"><a href="wyh/index.html" class="xiangqing">阅读详情</a></button>
+                <button class="yuedu" onclick="window.open('wyh/index.html')">阅读详情</button>
             </div>
             <footer>
                 <a href="index.html" title="文章作者 龙帅" class="zuozhe">龙帅</a>
@@ -54,7 +80,7 @@
             <header style="font-size: 50px;">头部（属性、元素）</header>
             <div class="head">
                 <p>头部里包含了HTML 元信息，有了这些元信息可以帮助我们更好的构建我们的网页。</p>
-                <button class="yuedu"><a href="head/index.html" class="xiangqing">阅读详情</a></button>
+                <button class="yuedu" onclick="window.open('head/index.html')">阅读详情</button>
             </div>
             <footer>
                 <a href="index.html" title="文章作者 龙帅" class="zuozhe">龙帅</a>
@@ -66,7 +92,7 @@
             <header style="font-size: 50px;">html文本处理基础</header>
             <div class="head">
                 <p>HTML 的主要工作之一是赋予文本结构，使浏览器能够按照开发者的意图显示 HTML 文档。本文解释了 HTML 如何通过添加标题和段落、强调单词、创建列表等方式来构造文本。</p>
-                <button class="yuedu"><a href="htmlText/index.html" class="xiangqing">阅读详情</a></button>
+                <button class="yuedu" onclick="window.open('htmlText/index.html')">阅读详情</button>
             </div>
             <footer>
                 <a href="index.html" title="文章作者 龙帅" class="zuozhe">龙帅</a>
@@ -78,7 +104,7 @@
             <header style="font-size: 50px;">超链接的应用</header>
             <div class="head">
                 <p>超链接是互联网提供的最令人兴奋的创新之一，它们从一开始就一直是互联网的一个特性，使互联网成为互联的网络。超链接使我们能够将我们的文档链接到任何其他文档（或其他资源），也可以链接到文档的指定部分，我们可以在一个简单的网址上提供应用程序。几乎任何网络内容都可以转换为链接，点击（或激活）超链接将使网络浏览器转到另一个网址</p>
-                <button class="yuedu"><a href="hyperlinks/index.html" class="xiangqing">阅读详情</a></button>
+                <button class="yuedu" onclick="window.open('hyperlinks/index.html')">阅读详情</button>
             </div>
             <footer>
                 <a href="index.html" title="文章作者 龙帅" class="zuozhe">龙帅</a>
@@ -90,7 +116,7 @@
             <header style="font-size: 50px;">文本格式进阶</header>
             <div class="head">
                 <p>HTML 中有许多其他元素可以用于格式化文本，我们没有在 HTML 文字处理基础中提到它们。本文中所描述的元素虽然少有人知，但仍然值得去学习（尽管仍然不是完整的列表）。在这里你将了解标记引用、描述列表、计算机代码和其他相关文本、下标和上标、联系信息等。</p>
-                <button class="yuedu"><a href="advancedtextformat/index.html" class="xiangqing">阅读详情</a></button>
+                <button class="yuedu" onclick="window.open('advancedtextformat/index.html')">阅读详情</button>
             </div>
             <footer>
                 <a href="index.html" title="文章作者 龙帅" class="zuozhe">龙帅</a>
@@ -102,7 +128,7 @@
             <header style="font-size: 50px;">网站架构</header>
             <div class="head">
                 <p>HTML 不仅能够定义网页的单独部分（例如“段落”或“图片”），还可以使用块级元素（例如“标题栏”、“导航菜单”、“主内容列”）来定义网站中的复合区域。本文将探讨如何规划基本的网站结构，并根据规划的结构来编写 HTML。</p>
-                <button class="yuedu"><a href="architecture/index.html" class="xiangqing">阅读详情</a></button>
+                <button class="yuedu" onclick="window.open('architecture/index.html')">阅读详情</button>
             </div>
             <footer>
                 <a href="index.html" title="文章作者 龙帅" class="zuozhe">龙帅</a>
@@ -114,7 +140,7 @@
             <header style="font-size: 50px;">标记信件</header>
             <div class="head">
                 <p>通过前面学习的基础知识完成一篇信件的布局以及样式</p>
-                <button class="yuedu"><a href="markletter/index.html" class="xiangqing">阅读详情</a></button>
+                <button class="yuedu" onclick="window.open('markletter/index.html')">阅读详情</button>
             </div>
             <footer>
                 <a href="index.html" title="文章作者 龙帅" class="zuozhe">龙帅</a>
@@ -126,7 +152,7 @@
             <header style="font-size: 50px;">多媒体与嵌入</header>
             <div class="head">
                 <p>前面学习的都是有关页面或者文字的样式，接下来学习的是有关图片或者音频，探索怎样用 HTML 来让你的网页包含多媒体，包括可以包含图像的不同方式，以及怎样嵌入视频，甚至是整个其他的网页。</p>
-                <button class="yuedu"><a href="multi-media/index.html" class="xiangqing">阅读详情</a></button>
+                <button class="yuedu" onclick="window.open('multi-media/index.html')">阅读详情</button>
             </div>
             <footer>
                 <a href="index.html" title="文章作者 龙帅" class="zuozhe">龙帅</a>
@@ -138,7 +164,7 @@
             <header style="font-size: 50px;">音频与视频</header>
             <div class="head">
                 <p>添加完图片后，我们就要想办法把音频或视频页添加进去，我们可以利用video 和 audio 元素来做到这件事，同时还可以为其添加字幕</p>
-                <button class="yuedu"><a href="video/index.html" class="xiangqing">阅读详情</a></button>
+                <button class="yuedu" onclick="window.open('video/index.html')">阅读详情</button>
             </div>
             <footer>
                 <a href="index.html" title="文章作者 龙帅" class="zuozhe">龙帅</a>
