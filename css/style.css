@@ -132,10 +132,8 @@ a.fenlei{
     padding: 1% 2%;
     border: 1px solid #f3cece;
     background-color: gray;
-   }
-
-   .xiangqing{
     color: #fff;
+    cursor: pointer;
    }
 
    .zuozhe{
@@ -148,6 +146,7 @@ a.fenlei{
 
    img {
     display: block;
+    overflow: hidden;
   }
 
   .beizhu{
@@ -163,4 +162,8 @@ a.fenlei{
   .zhuyi{
     width: 90%;
     background-color: darkslategray;
+  }
+
+  li{
+    cursor: pointer;
   }
