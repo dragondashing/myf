@@ -1,7 +1,7 @@
 // 获取元素
- var sliderbar = document.querySelector('.right');   
- var sliderbar2 = document.querySelector('.left-top') ;
- var banner = document.querySelector('.middle');
+ var sliderbar = document.querySelector('right.html.right');   
+ var sliderbar2 = document.querySelector('legt.html.left-top') ;
+ var banner = document.querySelector('index.html.middle');
  var bannerTop = banner.offsetTop; // 获取主体部分距离顶部的距离
  var sliderbarTop = sliderbar.offsetTop - bannerTop;  // 看上图我们发现侧边栏是固定banner部分右边的，因此我们要用两个值相减获取banner顶着浏览器页面最上方的时候，侧边栏距离浏览器最上方的值。
  var sliderbarTop2 = sliderbar2.offsetTop - bannerTop;
