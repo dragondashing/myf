@@ -81,7 +81,7 @@ body{
     width: 90%;
     background-color: darkslategray;
   }
-
-  li{
-    cursor: pointer;
-  }
+code{
+    background-color: azure;
+    padding: .125rem .25rem;
+}
