@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width"> 
+    <title>Vue</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../images/dragon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- 页眉 -->
+    <iframe src="../header.html" width="100%"; height="399px" frameborder="0" scrolling="no" name="headFrame" class="headif"></iframe>
+    <!-- 侧边栏左 -->
+    <iframe src="../left.html" frameborder="0" scrolling="no" name="leftFrame" class="leftif"></iframe>
+    <!-- 侧边栏右 -->
+    <iframe src="../right.html" frameborder="0" scrolling="no" name="rightFrame" class="rightif"></iframe>
+    <!-- 中间部分 -->
+    <div class="middle">
+        <article>
+            <h4>vue框架</h4>
+            <header style="font-size: 50px;">认识vue</header>
+            <div class="head">
+                <p>在本文中，将了解一点 Vue 的背景知识，了解如何安装它并创建一个新项目，研究整个项目和单个组件的高级结构，了解如何在本地运行项目，并为开始构建示例做好准备。</p>
+                <ol>
+                    <li>
+                        <strong>Vue是什么</strong>
+                        <p>Vue 是一个现代 JavaScript 框架提供了有用的设施渐进增强——不像许多其他框架，你可以使用 Vue 增强现有的 HTML。这使你可以使用 Vue 作为 jQuery 等库的直接替代品。</p>
+                        <p>我们可以逐步将vue集成到我们的应用程序中，此外vue还提供了一种渐进式编写标记，像大多数框架，Vue 通过组件允许你创建可重用块标记。大多数时候，Vue 组件是使用一个特殊的 HTML 模板的语法写的。当你需要比 HTML 语法允许的更多的控制时，你可以编写 JSX 或纯 JavaScript 函数来定义组件。</p>
+                    </li>
+                    <li>
+                        <strong>安装Vue（多种方法）</strong>
+                        <ol>
+                            <li>
+                                <p>想要使用vue，我们可以通过script标签引入，这就是 Vue 引以为傲的渐进式框架的原因。通过这种方法，你可以使用 Vue 的许多核心功能，例如属性、自定义组件和数据管理。</p>
+                                <ul>
+                                    <div class="lizi">
+                                        <li>                                        
+                                            <strong>开发环境版本，包含了有帮助的命令行警告:</strong><br>
+                                            <code>&lt;script src="https://unpkg.com/vue@3/dist/vue.global.js">&lt;/script></code>                                       
+                                        </li>
+                                        <br>
+                                        <li>
+                                            <strong>生产环境版本，优化了尺寸和速度，建议你在站点上包含 Vue 时指定版本号，这样任何框架更新都不会影响你的网站。</strong><br>
+                                            <code>
+                                                &lt;script src="https://unpkg.com/vue@3/dist/vue.global.prod.js">&lt;/script>
+                                            </code>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>然而，这种方法有一些局限性。要构建更复杂的应用程序，你需要使用 Vue NPM package。这将允许你使用 Vue 的高级功能并利用 WebPack 等捆绑包。为了使使用 Vue 构建应用程序更容易，有一个 CLI 来简化开发过程。</p>
+                                <ul>
+                                    <div class="lizi">
+                                        <li>                                                         
+                                                <strong>安装 CLI，终端中运行以下命令：</strong>
+                                                <code>npm install --global @vue/cli</code>
+                                        </li>
+                                        <br>
+                                        <li>
+                                            <strong>如果你使用 yarn:</strong>
+                                            <code>yarn global add @vue/cli</code>                                   
+                                        </li>
+                                    </div>
+                                </ul>
+                                <div class="beizhu">
+                                    <p>备注：<br>要使用 npm 软件包和 CLI，你需要：</p>
+                                    <ol>
+                                        <li>安装 Node.js 8.11 及以上的版本。</li>
+                                        <li>npm 或 yarn</li>
+                                    </ol>
+                                </div>
+                            </li>
+                        </ol>                       
+                    </li>
+                    <li>
+                        <strong>初始化一个新项目</strong>
+                        <ul>
+                            <li>
+                                <p>
+                                    首先需要在你想要创建项目的目录中打开终端，在终端中输入
+                                    <code>npm create vue@latest</code>
+                                    <p>这一步是vue的一个脚手架工具，你将会看到一些诸如 TypeScript 和测试支持之类的可选功能提示：</p>
+                                    <code>
+                                        √ Project name: ... demo-vue <br>
+                                        √ Add TypeScript? ... No / Yes<br>
+                                        √ Add JSX Support? ... No / Yes<br>
+                                        √ Add Vue Router for Single Page Application development? ... No / Yes<br>
+                                        √ Add Pinia for state management? ... No / Yes<br>
+                                        √ Add Vitest for Unit Testing? ... No / Yes<br>
+                                        √ Add an End-to-End Testing Solution? » No<br>
+                                        √ Add ESLint for code quality? ... No / Yes<br>
+                                    </code>
+                                    <div class="beizhu">
+                                        <p>
+                                            如果你不知道是否要开启那个功能，可以先按下<code>enter</code>键选择<code>no</code>,
+                                            然后根据提示通过以下步骤安装依赖并启动开发服务器：<br>
+                                            <code>
+                                                cd demo-vue<br>
+                                                npm install<br>
+                                                npm run dev<br>
+                                            </code>
+                                        </p>
+                                    </div>
+                                </p>
+                            </li>
+                            <p>到这一步，我们的脚手架已经搭建完成了！</p>
+                            <li>
+                                <p>接下来我们把目光转移到我们的项目目录里，目录里包含的文件就是我们刚才搭建脚手架自动生成的，</p>
+                                <div class="lizi">
+                                    <strong>列举几个比较重要的：</strong>
+                                    <ul>
+                                        <li>
+                                            <code>package.json</code>：该文件包含项目的依赖项列表，以及一些元数据和 eslint 配置。
+                                        </li>
+                                        <br>
+                                        <li>
+                                            <code>yarn.lock</code>：如果你选择 yarn 作为你的包管理器，将生成此文件，其中包含项目所需的所有依赖项和子依赖项的列表。
+                                        </li>
+                                        <br>
+                                        <li>
+                                            <code>babel.config.js</code>：这个是 Babel 的配置文件，可以在开发中使用 JavaScript 的新特性，并且将其转换为在生产环境中可以跨浏览器运行的旧语法代码。你也可以在这个里配置额外的 babel 插件。
+                                        </li>
+                                        <br>
+                                        <li>
+                                            <code>jsconfig.json</code>：这是一份用于 Visual Studio Code 的配置文件，它为 VS Code 提供了关于项目结构的上下文信息，并帮助自动完成。
+                                        </li>
+                                        <br>
+                                        <li>
+                                            <code>public</code>：这个目录包含一些在 Webpack 编译过程中没有加工处理过的文件（有一个例外：index.html 会有一些处理）。
+                                        </li>
+                                        <br>
+                                        <li>
+                                            <code>favicon.ico</code>：这个是项目的图标，当前就是一个 Vue 的 logo。
+                                        </li>
+                                        <br>
+                                        <li>
+                                            <code>index.html</code>：这是应用的模板文件，Vue 应用会通过这个 HTML 页面来运行，也可以通过 lodash 这种模板语法在这个文件里插值。
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <p>本地运行程序</p>
+                                <div class="beizhu">
+                                    <p>按照刚才运行后给出的local地址打开本地服务器，<strong>界面如下：</strong></p>
+                                    <img src="images/1.png" width="100%" height="100%">                            
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <p>到这里，我们就已经搭建好了一个初始的vue项目</p>
+                </ol>
+            </div>
+            <footer>
+                <a href="index.html" title="文章作者 龙帅" class="zuozhe">龙帅</a>
+            </footer>
+            <hr style='background-color:#f3cece; height:1px; border:none;'>
+        </article>
+    </div>
+</body>
+</html>
