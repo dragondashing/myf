@@ -74,7 +74,7 @@ body{
 
   .lizi{
     width: 90%;
-    background-color: burlywood;
+    background-color: white;
   }
 
   .zhuyi{
@@ -84,4 +84,9 @@ body{
 code{
     background-color: azure;
     padding: .125rem .25rem;
+}
+pre{
+  border: 1px solid transparent;
+  margin: 1rem 0 2rem;
+  padding: 1rem 2.5rem 1rem 1rem;
 }
