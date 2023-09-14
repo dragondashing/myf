@@ -9,13 +9,19 @@
 </head>
 <body>
     <!-- 页眉 -->
-    <iframe src="../header.html" width="100%"; height="399px" frameborder="0" scrolling="no" name="headFrame" class="headif"></iframe>
+    <div class="head" id="headif">
+        <iframe src="../header.html" frameborder="0" scrolling="no" name="headFrame" class="headif"></iframe>      
+    </div>
     <!-- 侧边栏左 -->
+    <div class="left" id="leftif">   
     <iframe src="../left.html" frameborder="0" scrolling="no" name="leftFrame" class="leftif"></iframe>
+    </div>
     <!-- 侧边栏右 -->
-    <iframe src="../right.html" frameborder="0" scrolling="no" name="rightFrame" class="rightif"></iframe>
+     <div class="right" id="rightif">
+        <iframe src="../right.html" frameborder="0" scrolling="no" name="rightFrame" class="rightif"></iframe>
+     </div>
     <!-- 中间部分 -->
-    <div class="middle">
+    <div class="middle" id="middle">
         <article>
             <h4>Vue框架</h4>
             <header style="font-size: 50px;">认识vue</header>
@@ -40,7 +46,19 @@
             </footer>
             <hr style='background-color:#f3cece; height:1px; border:none;'>
         </article>
+        <article>
+            <h4>Vue框架</h4>
+            <header style="font-size: 50px;">渲染Vue组件列表</header>
+            <div class="head">
+                <p>现在我们已经有了一个可以工作的组件。接下来我们将添加更多的 ToDoItem 组件到我们的应用中。本文我们会添加一系列待办事项到 App.vue 组件并使用 v-for 指令遍历它们，将它们的每一项展示在 ToDoItem 组件中。</p>
+                <button class="yuedu" onclick="window.open('xuanranVuezujian.html')">阅读详情</button>
+            </div>
+            <footer>
+                <a href="index.html" title="文章作者 龙帅" class="zuozhe">龙帅</a>
+            </footer>
+            <hr style='background-color:#f3cece; height:1px; border:none;'>
+        </article>
     </div>
-    <script src="js/javascript.js"></script>
+    <script src="../javascript.js"></script>
 </body>
 </html>
