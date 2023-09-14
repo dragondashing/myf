@@ -1,6 +1,5 @@
 <style>
     html{
-        background-color: gray;
         font-size: 20px;
         width: 100%;
         height: 100%;
@@ -9,9 +8,22 @@
     #WaitLst-right{
         width: 100%;
         height: 100%;
-        border:1px dashed #f3cece;
+        border:2px dashed #e0c33f;
         text-align: center;
         overflow-y: scroll;
+    }
+    #WaitLst-right::-webkit-scrollbar{   /*滚动条基本样式，高度*/
+        width:10px;height:90%;
+    }
+    #WaitLst-right::-webkit-scrollbar-thumb {/*滚动条上层颜色*/
+                border-radius: 10px;
+                -webkit-box-shadow: inset 0 0 1px rgb(76, 198, 235);
+                background: rgba(0,0,0,0.2);
+            }
+    #WaitLst-right::-webkit-scrollbar-track {/*滚动条底层颜色*/
+                -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+                border-radius: 10px;
+                background: rgba(0,0,0,0.1);
     }
     li{
         cursor: pointer;
@@ -49,6 +61,7 @@
             <ul>
                 <li onclick="window.open('vue/understandvue.html')">认识vue</li>
                 <li onclick="window.open('vue/shengruliaojie.html')">深入了解vue</li>
+                <li onclick="window.open('vue/xuanranVuezujian.html')">深入了解vue</li>
             </ul>
         </div>
     </nav>
