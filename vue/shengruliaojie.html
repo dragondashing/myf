@@ -3,19 +3,25 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width"> 
-    <title>Vue</title>
+    <title>深入了解vue</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="shortcut icon" href="../images/dragon.ico" type="image/x-icon">
 </head>
 <body>
     <!-- 页眉 -->
-    <iframe src="../header.html" width="100%"; height="399px" frameborder="0" scrolling="no" name="headFrame" class="headif"></iframe>
+    <div class="head" id="headif">
+        <iframe src="header.html" frameborder="0" scrolling="no" name="headFrame" class="headif"></iframe>      
+    </div>
     <!-- 侧边栏左 -->
-    <iframe src="../left.html" frameborder="0" scrolling="no" name="leftFrame" class="leftif"></iframe>
+    <div class="left" id="leftif">   
+    <iframe src="left.html" frameborder="0" scrolling="no" name="leftFrame" class="leftif"></iframe>
+    </div>
     <!-- 侧边栏右 -->
-    <iframe src="../right.html" frameborder="0" scrolling="no" name="rightFrame" class="rightif"></iframe>
+     <div class="right" id="rightif">
+        <iframe src="right.html" frameborder="0" scrolling="no" name="rightFrame" class="rightif"></iframe>
+     </div>
     <!-- 中间部分 -->
-    <div class="middle">
+    <div class="middle" id="middle">
         <article>
             <h4>vue框架</h4>
             <header style="font-size: 50px;">创建第一个Vue组件</header>
