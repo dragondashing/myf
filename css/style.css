@@ -1,5 +1,5 @@
 html{
-    background-color: gray;
+    background-color: rgba(101, 208, 240, 0.589);
     font-size: 20px;
     width: 100%;
     height: 100%;
@@ -31,12 +31,14 @@ body{
 
    /* 中间部分 */
    .middle{
-    border:1px dashed #f3cece;
+    border:2px dashed #e0c33f;
     width: auto;
     height: auto;
     margin-top: 2%;
     margin-left: 18%;
     margin-right: 18%;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
    }
 
    h4,header{
