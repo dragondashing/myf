@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width"> 
+    <title>Vue</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../images/dragon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- 页眉 -->
+    <iframe src="../header.html" width="100%"; height="399px" frameborder="0" scrolling="no" name="headFrame" class="headif"></iframe>
+    <!-- 侧边栏左 -->
+    <iframe src="../left.html" frameborder="0" scrolling="no" name="leftFrame" class="leftif"></iframe>
+    <!-- 侧边栏右 -->
+    <iframe src="../right.html" frameborder="0" scrolling="no" name="rightFrame" class="rightif"></iframe>
+    <!-- 中间部分 -->
+    <div class="middle">
+        <article>
+            <h4>vue框架</h4>
+            <header style="font-size: 50px;">渲染Vue组件列表</header>
+            <div class="head">
+                <p>现在我们已经有了一个可以工作的组件。接下来我们将添加更多的 ToDoItem 组件到我们的应用中。本文我们会添加一系列待办事项到 App.vue 组件并使用 v-for 指令遍历它们，将它们的每一项展示在 ToDoItem 组件中。</p>
+                <ol>
+                    <li>
+                        <strong>利用v-for指令渲染组件列表</strong>
+                        <p>一个列表当然不仅仅只有一个事项，所以我们可以利用一些特定的指令来渲染它，Vue 中的 v-for 可以用来实现这种效果。它是 Vue 自带的指令，用于在 template 中实现循环，我们可以利用它将数组中的各项重复渲染成指定的特征。</p>
+                        <ul>
+                            <li>
+                                添加一些需要渲染的数据
+                                <p>
+                                    首先我们需要准备一个待办事项数组。添加 data 属性到 App.vue 组件对象中，它包含一个 ToDoItems 字段，其值是待办事项数组。这些数组中包含了label和done属性。
+                                </p>
+                                <div class="lizi">
+                                    <strong>如下：</strong>
+                                    <pre>
+<code>
+    export default {
+        name: "app",
+        components: {
+          ToDoItem,
+        },
+        data() {
+          return {
+            ToDoItems: [
+              { label: "学习Vue", done: false },
+              { label: "使用CLI创建Vue项目"，done:true},
+              { label: "放松", done: true },
+              { label: "创建一个任务清单", done: false },
+            ],
+          };
+        },
+      };   
+</code>
+                                    </pre>
+                                </div>
+                                <p>现在已经创建了一个包含两个属性的列表，我们需要用v-for将其渲染在我们的页面上。</p>
+                                <div class="beizhu">
+                                    <p>v-for类似 JavaScript 中的 for...in 循环——v-for="item in items"——items 是你要迭代的列表，item 是数组中当前元素的引用。</p>
+                                </div>
+                            </li>
+                            <li>
+                                <ol>
+                                    <li>
+                                        <p>遍历数据之后要做的就是传递数据，既然要传递数据，我们要做的就是给数据添加一个独有的key值，这样就能给v-for识别列表中的元素。</p>
+                                        <p>为了确保 Vue 能够准确地比较 key 属性，它们需要是字符串或数字值。虽然使用名字字段很好，但这个字段最终将由用户输入控制，这意味着我们不能保证名字是唯一的。然而，我们可以使用 lodash.uniqueid()。</p>
+                                        <div class="lizi">
+                                            <strong>如下：</strong>
+                                            <pre>
+<code>import uniqueId from "lodash.uniqueid";</code>
+                                            </pre>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>引入key值之后，我们需要添加 id 字段到 ToDoItems 数组的每一个元素中，并且将他们赋值为 uniqueId('todo-')。 此时，App.vue 中的 script 元素内容应该如下：</p>
+                                        <div class="lizi">
+                                            <pre>
+<code>
+import ToDoItem from "./components/ToDoItem.vue";
+import uniqueId from "lodash.uniqueid";
+
+export default {
+        name: "app",
+        components: {
+          ToDoItem,
+        },
+        data() {
+          return {
+            ToDoItems: [
+              { id: uniqueId("todo-"), label: "学习Vue", done: false },
+              { id: uniqueId("todo-"), label: "使用CLI创建Vue项目",done:true},
+              { id: uniqueId("todo-"), label: "放松", done: true },
+              { id: uniqueId("todo-"), label: "创建一个任务清单", done: false },
+            ],
+          };
+        },
+      };
+</code>
+                                            </pre>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>在你的 App.vue 模板中添加 v-for 指令和 key 属性到 li 元素：</p>
+                                        <div class="lizi">
+                                            <pre>
+<code>
+&lt;ul>
+    &lt;li v-for="item in ToDoItems" :key="item.id">
+      &lt;to-do-item label="我的任务清单" :done="true">&lt;/to-do-item>
+    &lt;/li>
+&lt;/ul>
+</code>
+                                            </pre>
+                                        </div>
+                                        <p>
+                                            这样修改后，<li> 标签中的 JavaScript 表达式就可以访问 item 了，这意味着我们可以使用 v-bind 来传递 item 对象的字段给 ToDoItem 组件了。这非常有用，我们想让列表中的待办事项的 label 值展示到它的 label 中，而不是显示一个静态的“My Todo Item”。此外，我们想让它们的 checked 状态反映它们的 done 字段，而不是总设置为 done="true"。
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>把 label="My ToDo Item" 改成 :label="item.label", :done="false" 改成 :done="item.done"，像下面这样：</p>
+                                        <div class="lizi">
+                                            <pre>
+<code>
+&lt;ul>
+    &lt;li v-for="item in ToDoItems" :key="item.id">
+      &lt;to-do-item :label="item.label" :done="item.done">&lt;/to-do-item>
+  &lt;/li>
+&lt;/ul>
+</code>
+                                            </pre>
+                                        </div>
+                                    </li>
+                                </ol>  
+                                <p>现在再去运行我们的网页，就能看到数据已经被遍历并且渲染到了页面中，前面的复选框也按照我们的需求显示，如果你查看源码的话，你会发现输入都有了唯一的 id，它取自 App 组件中的对象。</p>
+                                <div class="lizi">
+                                    <strong>如下：</strong>
+                                    <img src="./images/3.png" alt="页面效果展示">
+                                </div>                             
+                            </li>
+                        </ul>
+                    </li>
+                   <li>
+                    <strong>重构</strong>
+                    <p>在这里我们可以做一个小小的重构。我们可以把 id 变成一个 prop，而不是在 ToDoItem 组件中为复选框生成它。虽然这不是严格意义上的需要，但它使我们更容易管理，因为我们已经需要为每个 todo 项目创建一个唯一的 id。</p>
+                    <ol>
+                        <li>添加一个新的 prop id 到 ToDoItem 组件。</li>
+                        <li>标记它为 required，类型是 String。</li>
+                        <li>为防止命名冲突，删除掉 data 属性中的 id 字段。</li>
+                        <li>现在不需要再使用 uniqueId 了，所以需要删除掉 import uniqueId from 'lodash.uniqueid'; 这行，否则你的应用会报错。</li>
+                    </ol>
+                    <div class="lizi">
+                        <strong>ToDoItem 中的 &lt;script> 内容应该如下所示：</strong>
+                        <pre>
+<code>
+&lt;script>
+    export default {
+      props: {
+      label: { required: true, type: String },
+      done: { default: false, type: Boolean },
+      id: {required:true,type:String},
+    },
+    data() {
+      return {
+        isDone: this.done,
+      };
+    },
+    };
+&lt;/script>
+</code>
+                        </pre>
+                        <strong>在 App.vue 组件中将 item.id 作为 prop 传递给 ToDoItem 组件。你的 App.vue template 应该如下所示：</strong>
+                        <pre>
+<code>
+&lt;ul>
+    &lt;li v-for="item in ToDoItems" :key="item.id">
+      &lt;to-do-item :label="item.label" :done="item.done" :id="item.id">&lt;/to-do-item>
+  &lt;/li>
+&lt;/ul>
+</code>
+                        </pre>
+                    </div>
+                </li>
+                <p>你渲染后的站点看起来是没有变化的，但是这次重构使得 item.id 像其他参数一样，作为 prop 从 App.vue 传递给 ToDoItem。现在代码变得更有逻辑性和一致性。</p>
+                </ol>
+            </div>
+            <footer>
+                <a href="index.html" title="文章作者 龙帅" class="zuozhe">龙帅</a>
+            </footer>
+            <hr style='background-color:#f3cece; height:1px; border:none;'>
+        </article>
+    </div>
+</body>
+</html>
