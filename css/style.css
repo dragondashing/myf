@@ -1,5 +1,5 @@
 html{
-    background-color: rgba(101, 208, 240, 0.589);
+    background-color: rgba(101, 208, 240, 0.39);
     font-size: 20px;
     width: 100%;
     height: 100%;
@@ -10,22 +10,41 @@ body{
   height: 100%;
   margin: 0 0;
 }
+.head{
+  width: 100%;
+  height: 41%;
+  overflow: hidden;
+}
+.headif{
+  width: 100%;
+  height: 100%;
+}
 
-.leftif{
-  margin-left: 1%;
+.left{
   width: 15%;
   height: 32%;
-  float: left;
-  margin-top: 2%;
+  position: absolute;
+  top: 45%;
+  left: 1%;
+  overflow: hidden;
+}
+.leftif{
+  width: 100%;
+  height: 100%;
 }
 
 /* 侧边栏右 */
-.rightif{
-  margin-right: 1%;
+.right{
   width: 15%;
   height: 50%;
-  float: right;
-  margin-top: 2%;
+  position: absolute;
+  top: 45%;
+  right: 1%;
+  overflow: hidden;
+}
+.rightif{
+  width: 100%;
+  height: 100%;
 }
 
 
@@ -34,9 +53,10 @@ body{
     border:2px dashed #e0c33f;
     width: auto;
     height: auto;
-    margin-top: 2%;
-    margin-left: 18%;
-    margin-right: 18%;
+    position: absolute;
+    top: 45%;
+    left: 17%;
+    right: 17%;
     padding-left: 0.5%;
     padding-right: 0.5%;
    }
