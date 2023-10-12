@@ -36,8 +36,10 @@ p,li{
 img {
     display: block;
     margin: 0 auto;
+    cursor: pointer;
   }
 
   button{
     margin: auto;
+    cursor: pointer;
   }

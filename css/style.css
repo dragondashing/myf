@@ -87,6 +87,7 @@ body{
    img {
     display: block;
     overflow: hidden;
+    cursor: pointer;
   }
 
   .beizhu{
